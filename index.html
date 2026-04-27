@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brandbook — Espósito Pizzeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================
+     ESPÓSITO PIZZERIA — BRANDBOOK
+     ============================================ */
+
+  :root {
+    /* Paleta principal — derivada do logo SVG (cores reais) */
+    --rosso:        #E94B4B;
+    --rosso-deep:   #B83232;
+    --verde:        #008A51;   /* Verde extraído do SVG real */
+    --verde-deep:   #005A35;
+
+    /* Neutros quentes */
+    --panna:        #F4EBD9;
+    --panna-warm:   #EDE0C5;
+    --pergamena:    #E8DBC0;
+    --legno:        #2A1810;
+    --carbone:      #1A0F08;
+    --inchiostro:   #2B2018;
+
+    /* Acentos */
+    --oro:          #C9A24A;
+    --basilico:     #4A7C3A;
+
+    /* Tipografia */
+    --display:  'DM Serif Display', 'Playfair Display', Georgia, serif;
+    --serif:    'Playfair Display', Georgia, serif;
+    --hand:     'Caveat', cursive;
+    --sans:     'Inter', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--panna);
+    color: var(--inchiostro);
+    line-height: 1.55;
+    font-weight: 400;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(233, 75, 75, 0.025) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(0, 138, 81, 0.025) 0%, transparent 40%);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+    background-image:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.09 0 0 0 0 0.04 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 48px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* CAPA */
+  .cover {
+    min-height: 100vh;
+    background: var(--carbone);
+    color: var(--panna);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 0;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 100%, rgba(233, 75, 75, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 20%, rgba(201, 162, 74, 0.08) 0%, transparent 50%);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    inset: 24px;
+    border: 1px solid rgba(244, 235, 217, 0.15);
+    pointer-events: none;
+  }
+  .cover-inner {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 980px;
+    padding: 0 48px;
+  }
+  .cover-eyebrow {
+    font-family: var(--hand);
+    font-size: 32px;
+    color: var(--rosso);
+    margin-bottom: 32px;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  .cover-logo {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto 40px;
+    display: block;
+    position: relative;
+  }
+  .cover-logo svg, .cover-logo img { width: 100%; height: auto; display: block; }
+  .cover-logo::before {
+    content: '';
+    position: absolute;
+    inset: -60px;
+    background: radial-gradient(ellipse at center, rgba(233, 75, 75, 0.18) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .cover-subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--panna-warm);
+    opacity: 0.85;
+    margin-bottom: 64px;
+    letter-spacing: 0.02em;
+  }
+  .cover-meta {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--panna);
+    opacity: 0.7;
+    flex-wrap: wrap;
+  }
+  .cover-meta span { position: relative; }
+  .cover-meta span:not(:last-child)::after {
+    content: '✦';
+    position: absolute;
+    right: -28px;
+    color: var(--oro);
+    opacity: 0.6;
+  }
+  .cover-icon {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    z-index: 3;
+    opacity: 0.85;
+  }
+  .cover-icon img { width: 100%; height: auto; }
+
+  .cover-corner {
+    position: absolute;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--panna);
+    opacity: 0.5;
+    z-index: 3;
+  }
+  .cover-corner.tl { top: 56px; left: 56px; }
+  .cover-corner.tr { top: 56px; right: 56px; }
+  .cover-corner.bl { bottom: 56px; left: 56px; }
+  .cover-corner.br { bottom: 56px; right: 56px; }
+
+  /* SEÇÕES BASE */
+  section {
+    padding: 120px 0;
+    position: relative;
+  }
+  section.dark {
+    background: var(--carbone);
+    color: var(--panna);
+  }
+  section.cream {
+    background: var(--panna-warm);
+  }
+  section.deep {
+    background: var(--rosso-deep);
+    color: var(--panna);
+  }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rosso);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--rosso);
+  }
+  .section-number {
+    font-family: var(--display);
+    font-size: 14px;
+    color: var(--inchiostro);
+    opacity: 0.4;
+    letter-spacing: 0.1em;
+  }
+  section.dark .section-label { color: var(--oro); }
+  section.dark .section-label::before { background: var(--oro); }
+  section.dark .section-number { color: var(--panna); opacity: 0.5; }
+  section.deep .section-label { color: var(--panna); }
+  section.deep .section-label::before { background: var(--panna); }
+  section.deep .section-number { color: var(--panna); opacity: 0.7; }
+
+  h2.section-title {
+    font-family: var(--display);
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    font-weight: 400;
+  }
+  h2.section-title em {
+    font-style: italic;
+    color: var(--rosso);
+  }
+  section.dark h2.section-title em { color: var(--oro); }
+  section.deep h2.section-title em { color: var(--panna-warm); }
+
+  .section-intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    max-width: 680px;
+    color: var(--inchiostro);
+    opacity: 0.8;
+    margin-bottom: 80px;
+  }
+  section.dark .section-intro { color: var(--panna); }
+  section.deep .section-intro { color: var(--panna); opacity: 0.95; }
+
+  /* ÍNDICE */
+  .toc {
+    background: var(--carbone);
+    color: var(--panna);
+    padding: 96px 0;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .toc-grid h2 {
+    font-family: var(--display);
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .toc-grid h2 em { font-style: italic; color: var(--oro); }
+  .toc-list {
+    list-style: none;
+  }
+  .toc-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(244, 235, 217, 0.12);
+    font-family: var(--serif);
+    font-size: 22px;
+    transition: padding-left 0.3s ease;
+    cursor: pointer;
+  }
+  .toc-list li:hover {
+    padding-left: 12px;
+    color: var(--oro);
+  }
+  .toc-list .num {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--rosso);
+    margin-right: 24px;
+  }
+  .toc-list .dots {
+    flex: 1;
+    border-bottom: 1px dotted rgba(244, 235, 217, 0.3);
+    margin: 0 24px;
+    transform: translateY(-6px);
+  }
+
+  /* ============================================================
+     01 — MANIFESTO
+     ============================================================ */
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
+    align-items: center;
+  }
+  .manifesto-text p {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    color: var(--inchiostro);
+  }
+  .manifesto-text .lead {
+    font-size: 26px;
+    font-style: italic;
+    color: var(--rosso-deep);
+    border-left: 3px solid var(--rosso);
+    padding-left: 24px;
+    margin: 32px 0;
+  }
+  .manifesto-tirinha {
+    background: var(--panna-warm);
+    border: 2px solid var(--inchiostro);
+    padding: 32px;
+    position: relative;
+    box-shadow: 12px 12px 0 var(--rosso);
+  }
+  .manifesto-tirinha h4 {
+    font-family: var(--hand);
+    font-size: 32px;
+    color: var(--rosso);
+    margin-bottom: 16px;
+    transform: rotate(-1deg);
+  }
+  .manifesto-tirinha .panel {
+    background: var(--panna);
+    padding: 20px;
+    border: 1.5px solid var(--inchiostro);
+    margin-bottom: 12px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+    position: relative;
+  }
+  .manifesto-tirinha .panel::before {
+    content: attr(data-panel);
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: var(--rosso);
+    color: var(--panna);
+    padding: 2px 10px;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  /* ============================================================
+     02 — LOGO
+     ============================================================ */
+  .logo-hero {
+    background: var(--panna);
+    padding: 96px 80px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+  }
+  .logo-hero img {
+    max-width: 560px;
+    width: 100%;
+    height: auto;
+  }
+  .logo-hero .corners {
+    position: absolute;
+    inset: 16px;
+    pointer-events: none;
+  }
+  .logo-hero .corners::before,
+  .logo-hero .corners::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--rosso);
+  }
+  .logo-hero .corners::before {
+    top: 0; left: 0;
+    border-right: none; border-bottom: none;
+  }
+  .logo-hero .corners::after {
+    bottom: 0; right: 0;
+    border-left: none; border-top: none;
+  }
+  .logo-hero-meta {
+    text-align: center;
+    margin-bottom: 64px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--inchiostro);
+    opacity: 0.5;
+  }
+
+  /* Variações de logo */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 64px;
+  }
+  .logo-card {
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px;
+    position: relative;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    overflow: hidden;
+  }
+  .logo-card img { max-width: 80%; height: auto; }
+  .logo-card.bg-cream { background: var(--panna); }
+  .logo-card.bg-warm  { background: var(--panna-warm); }
+  .logo-card.bg-perg  { background: var(--pergamena); }
+  .logo-card.bg-dark  { background: var(--carbone); border-color: var(--carbone);}
+  .logo-card.bg-red   { background: var(--rosso); border-color: var(--rosso);}
+  .logo-card.bg-wood  { background: var(--legno); border-color: var(--legno);}
+  .logo-card .label {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--inchiostro);
+    opacity: 0.55;
+  }
+  .logo-card.bg-dark .label,
+  .logo-card.bg-red .label,
+  .logo-card.bg-wood .label { color: var(--panna); opacity: 0.7; }
+
+  /* Construção */
+  .construction {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    background: var(--panna);
+    padding: 48px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    margin-bottom: 64px;
+  }
+  .construction-visual {
+    aspect-ratio: 16/10;
+    background: var(--panna-warm);
+    background-image:
+      linear-gradient(rgba(233, 75, 75, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(233, 75, 75, 0.2) 1px, transparent 1px);
+    background-size: 32px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px;
+    position: relative;
+  }
+  .construction-visual img { max-width: 70%; height: auto; }
+  .construction h3 {
+    font-family: var(--display);
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .construction p {
+    font-family: var(--serif);
+    font-size: 15px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .construction ul { list-style: none; }
+  .construction ul li {
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 1px dotted rgba(43, 32, 24, 0.2);
+    display: flex;
+    justify-content: space-between;
+  }
+  .construction ul li strong { color: var(--rosso); }
+
+  /* Ícone — coroa + e */
+  .icon-section {
+    background: var(--panna-warm);
+    padding: 64px 48px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    margin-bottom: 64px;
+  }
+  .icon-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .icon-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    background: var(--carbone);
+    padding: 48px;
+  }
+  .icon-showcase img { width: 60%; height: auto; }
+  .icon-variations {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .icon-variations .v {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(43, 32, 24, 0.2);
+    padding: 24px;
+  }
+  .icon-variations .v img { width: 70%; height: auto; }
+  .icon-variations .v.cream { background: var(--panna); }
+  .icon-variations .v.dark  { background: var(--carbone); border-color: var(--carbone); }
+  .icon-variations .v.red   { background: var(--rosso); border-color: var(--rosso); }
+  .icon-variations .v.green { background: var(--verde); border-color: var(--verde); }
+
+  /* Don'ts logo */
+  .donts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .donts-grid .dont {
+    aspect-ratio: 4/3;
+    background: var(--panna);
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .donts-grid .dont .demo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  .donts-grid .dont .demo img { max-width: 80%; max-height: 80%; height: auto; }
+  .donts-grid .dont .demo.distort img  { transform: scaleX(0.5); }
+  .donts-grid .dont .demo.rotated img  { transform: rotate(15deg); }
+  .donts-grid .dont .demo.colored img  { filter: hue-rotate(180deg); }
+  .donts-grid .dont .demo.stretched img{ transform: scaleY(2); transform-origin: center;}
+  .donts-grid .dont::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(45deg, transparent calc(50% - 1px), var(--rosso) calc(50% - 1px), var(--rosso) calc(50% + 1px), transparent calc(50% + 1px));
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .donts-grid .dont .label {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--inchiostro);
+    opacity: 0.75;
+    position: relative;
+    z-index: 3;
+    background: var(--panna);
+    padding: 4px 10px;
+  }
+
+  /* ============================================================
+     03 — PALETA
+     ============================================================ */
+  .palette-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 64px;
+    aspect-ratio: 5/2;
+  }
+  .palette-hero .swatch-big {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px;
+    color: var(--panna);
+    position: relative;
+  }
+  .palette-hero .swatch-big.rosso { background: var(--rosso); }
+  .palette-hero .swatch-big.verde { background: var(--verde); }
+  .palette-hero h3 {
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .palette-hero h3 em { font-style: italic; }
+  .palette-hero .codes {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    line-height: 2;
+    opacity: 0.9;
+  }
+  .palette-hero .codes span {
+    display: block;
+    font-feature-settings: "tnum";
+  }
+
+  .palette-secondary {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    margin-bottom: 48px;
+  }
+  .swatch {
+    aspect-ratio: 4/5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .swatch h4 {
+    font-family: var(--display);
+    font-size: 18px;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    line-height: 1.1;
+  }
+  .swatch .hex { opacity: 0.8; }
+  .swatch.panna { background: var(--panna); color: var(--inchiostro); border: 1px solid rgba(43, 32, 24, 0.15);}
+  .swatch.warm  { background: var(--panna-warm); color: var(--inchiostro); }
+  .swatch.perg  { background: var(--pergamena); color: var(--inchiostro); }
+  .swatch.legno { background: var(--legno); color: var(--panna); }
+  .swatch.carbone { background: var(--carbone); color: var(--panna); }
+  .swatch.oro     { background: var(--oro); color: var(--carbone); }
+
+  .palette-usage {
+    background: var(--panna-warm);
+    padding: 48px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+  }
+  .palette-usage h3 {
+    font-family: var(--display);
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .palette-usage .ratio {
+    display: flex;
+    height: 48px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .palette-usage .ratio span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--panna);
+    letter-spacing: 0.1em;
+  }
+  .palette-usage .ratio .b1 { background: var(--panna); color: var(--inchiostro); flex: 50;}
+  .palette-usage .ratio .b2 { background: var(--carbone); flex: 25;}
+  .palette-usage .ratio .b3 { background: var(--rosso); flex: 15;}
+  .palette-usage .ratio .b4 { background: var(--verde); flex: 7;}
+  .palette-usage .ratio .b5 { background: var(--oro); flex: 3; color: var(--carbone);}
+  .palette-usage p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--inchiostro);
+    opacity: 0.75;
+  }
+
+  /* ============================================================
+     04 — TIPOGRAFIA
+     ============================================================ */
+  .typo-hero {
+    background: var(--panna-warm);
+    padding: 80px 48px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .typo-hero .specimen {
+    font-family: var(--display);
+    font-size: clamp(96px, 18vw, 240px);
+    line-height: 0.85;
+    color: var(--rosso);
+    letter-spacing: -0.04em;
+    margin-bottom: 32px;
+    font-weight: 400;
+  }
+  .typo-hero .specimen em {
+    font-style: italic;
+    color: var(--inchiostro);
+  }
+  .typo-hero .meta {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .typo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .typo-card {
+    background: var(--panna);
+    padding: 48px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+  }
+  .typo-card .role {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rosso);
+    margin-bottom: 16px;
+  }
+  .typo-card .name {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .typo-card .name.serif { font-family: var(--display); }
+  .typo-card .name.hand  { font-family: var(--hand); font-size: 80px; color: var(--rosso); }
+  .typo-card .name.sans  { font-family: var(--sans); font-weight: 500; font-size: 56px;}
+  .typo-card .alphabet {
+    font-size: 18px;
+    word-spacing: 4px;
+    margin-bottom: 24px;
+    line-height: 1.3;
+    color: var(--inchiostro);
+    opacity: 0.7;
+  }
+  .typo-card .alphabet.serif { font-family: var(--serif); }
+  .typo-card .alphabet.hand  { font-family: var(--hand); font-size: 28px;}
+  .typo-card .alphabet.sans  { font-family: var(--sans); }
+  .typo-card .usage {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--inchiostro);
+    opacity: 0.8;
+    border-top: 1px solid rgba(43, 32, 24, 0.15);
+    padding-top: 16px;
+  }
+  .typo-card .usage strong {
+    font-weight: 600;
+    color: var(--rosso);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .typo-scale {
+    background: var(--panna);
+    padding: 48px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+  }
+  .typo-scale h3 {
+    font-family: var(--display);
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  .scale-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    gap: 24px;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px dotted rgba(43, 32, 24, 0.2);
+  }
+  .scale-row .label {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rosso);
+  }
+  .scale-row .sample {
+    font-family: var(--display);
+    color: var(--inchiostro);
+    line-height: 1;
+  }
+  .scale-row .meta {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--inchiostro);
+    opacity: 0.6;
+    text-align: right;
+    letter-spacing: 0.05em;
+  }
+  .scale-row .sample.s1 { font-size: 64px; }
+  .scale-row .sample.s2 { font-size: 48px; }
+  .scale-row .sample.s3 { font-size: 32px; font-style: italic;}
+  .scale-row .sample.s4 { font-size: 22px; font-family: var(--serif); font-style: italic;}
+  .scale-row .sample.s5 { font-size: 16px; font-family: var(--sans); }
+  .scale-row .sample.s6 { font-size: 11px; font-family: var(--sans); letter-spacing: 0.25em; text-transform: uppercase;}
+
+  /* ============================================================
+     05 — ILUSTRAÇÃO
+     ============================================================ */
+  .illustration-hero {
+    background: var(--panna-warm);
+    padding: 64px;
+    border: 2px solid var(--inchiostro);
+    margin-bottom: 64px;
+    position: relative;
+    box-shadow: 16px 16px 0 var(--rosso);
+  }
+  .illustration-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .illustration-text h3 {
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    color: var(--inchiostro);
+  }
+  .illustration-text h3 em { font-style: italic; color: var(--rosso); }
+  .illustration-text p {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: var(--inchiostro);
+  }
+  .illustration-text .quote {
+    font-family: var(--hand);
+    font-size: 36px;
+    transform: rotate(-1deg);
+    color: var(--rosso);
+    margin-top: 24px;
+    line-height: 1.1;
+  }
+  .illustration-text .historical {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rosso);
+    margin-bottom: 16px;
+  }
+
+  .illustration-visual {
+    background: var(--panna);
+    padding: 24px;
+    border: 1px solid rgba(43, 32, 24, 0.2);
+  }
+  .illustration-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Princípios da ilustração */
+  .illustration-principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+  .ill-principle {
+    background: var(--panna);
+    padding: 32px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    border-top: 4px solid var(--rosso);
+  }
+  .ill-principle .num {
+    font-family: var(--display);
+    font-size: 48px;
+    color: var(--rosso);
+    line-height: 0.9;
+    margin-bottom: 16px;
+  }
+  .ill-principle h4 {
+    font-family: var(--display);
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--inchiostro);
+  }
+  .ill-principle p {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--inchiostro);
+    opacity: 0.8;
+  }
+
+  /* Detalhes da ilustração — recortes */
+  .illustration-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .ill-detail {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--panna);
+    border: 1px solid rgba(43, 32, 24, 0.2);
+    position: relative;
+  }
+  .ill-detail img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ill-detail.d1 img { object-position: 22% 50%; transform: scale(2.2); transform-origin: 22% 50%; }   /* rainha */
+  .ill-detail.d2 img { object-position: 38% 45%; transform: scale(2.2); transform-origin: 38% 45%; }  /* rei */
+  .ill-detail.d3 img { object-position: 65% 60%; transform: scale(2.2); transform-origin: 65% 60%; }  /* pizzaiolo */
+  .ill-detail.d4 img { object-position: 80% 22%; transform: scale(2.2); transform-origin: 80% 22%; }  /* anjo */
+
+  .ill-detail .tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: var(--inchiostro);
+    color: var(--panna);
+    padding: 4px 10px;
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  /* ============================================================
+     06 — FOTOGRAFIA
+     ============================================================ */
+  .photo-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-bottom: 64px;
+    align-items: end;
+  }
+  .photo-principles {
+    list-style: none;
+  }
+  .photo-principles li {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(43, 32, 24, 0.15);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.5;
+    display: flex;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .photo-principles li::before {
+    content: counter(p, decimal-leading-zero);
+    counter-increment: p;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--rosso);
+    flex-shrink: 0;
+  }
+  .photo-principles { counter-reset: p; }
+
+  .photo-mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+  .photo-mosaic .ph {
+    background: var(--panna-warm);
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  .photo-mosaic .ph img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .photo-mosaic .ph:hover img { transform: scale(1.05); }
+  .photo-mosaic .ph.tall { grid-row: span 2; aspect-ratio: 1/2; }
+  .photo-mosaic .ph.wide { grid-column: span 2; aspect-ratio: 2/1; }
+  .photo-mosaic .ph .tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: var(--inchiostro);
+    color: var(--panna);
+    padding: 4px 10px;
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .photo-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .photo-rule {
+    background: var(--panna);
+    padding: 32px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    border-top: 4px solid var(--verde);
+  }
+  .photo-rule.dont { border-top-color: var(--rosso); }
+  .photo-rule h4 {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--verde);
+    margin-bottom: 16px;
+  }
+  .photo-rule.dont h4 { color: var(--rosso); }
+  .photo-rule ul { list-style: none; }
+  .photo-rule ul li {
+    font-family: var(--serif);
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px dotted rgba(43, 32, 24, 0.15);
+    line-height: 1.5;
+    display: flex;
+    gap: 12px;
+  }
+  .photo-rule ul li::before {
+    content: '✓';
+    color: var(--verde);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .photo-rule.dont ul li::before {
+    content: '✕';
+    color: var(--rosso);
+  }
+
+  /* ============================================================
+     07 — TOM DE VOZ
+     ============================================================ */
+  .voice-hero {
+    background: var(--carbone);
+    color: var(--panna);
+    padding: 80px 48px;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .voice-hero .big-quote {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .voice-hero .big-quote em { color: var(--rosso); font-style: italic;}
+  .voice-hero .attribution {
+    font-family: var(--hand);
+    font-size: 28px;
+    color: var(--oro);
+    margin-top: 32px;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+
+  .voice-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+  .pillar {
+    background: var(--panna);
+    padding: 32px 24px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    text-align: center;
+    position: relative;
+  }
+  .pillar .icon-box {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: var(--rosso);
+    color: var(--panna);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pillar .icon-box svg { width: 32px; height: 32px; }
+  .pillar h4 {
+    font-family: var(--display);
+    font-size: 24px;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .pillar p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--inchiostro);
+    opacity: 0.75;
+  }
+
+  .voice-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+  .voice-rule {
+    padding: 40px 32px;
+    border: 1.5px solid;
+  }
+  .voice-rule.do {
+    background: rgba(0, 138, 81, 0.06);
+    border-color: var(--verde);
+  }
+  .voice-rule.dont {
+    background: rgba(233, 75, 75, 0.06);
+    border-color: var(--rosso);
+  }
+  .voice-rule .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid currentColor;
+  }
+  .voice-rule.do .header { color: var(--verde); }
+  .voice-rule.dont .header { color: var(--rosso); }
+  .voice-rule .header .badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: currentColor;
+    color: var(--panna);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: var(--display);
+    font-size: 18px;
+  }
+  .voice-rule.dont .header .badge {color: var(--panna);}
+  .voice-rule .header h4 {
+    font-family: var(--display);
+    font-size: 28px;
+    color: var(--inchiostro);
+  }
+  .voice-rule ul { list-style: none; }
+  .voice-rule ul li {
+    padding: 14px 0;
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.5;
+    border-bottom: 1px dotted rgba(43, 32, 24, 0.15);
+    color: var(--inchiostro);
+  }
+  .voice-rule ul li:last-child { border-bottom: none; }
+  .voice-rule ul li em {
+    font-style: italic;
+    color: var(--inchiostro);
+    opacity: 0.7;
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .messages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .msg-card {
+    background: var(--panna);
+    padding: 32px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    position: relative;
+  }
+  .msg-card::before {
+    content: '"';
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-family: var(--display);
+    font-size: 80px;
+    color: var(--rosso);
+    line-height: 1;
+  }
+  .msg-card .ctx {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rosso);
+    margin-bottom: 16px;
+  }
+  .msg-card .text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--inchiostro);
+  }
+
+  /* ============================================================
+     08 — APLICAÇÕES SOCIAL
+     ============================================================ */
+  .social-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .ig-post {
+    aspect-ratio: 1;
+    background: var(--panna-warm);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+  }
+  .ig-post .label {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--inchiostro);
+    color: var(--panna);
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  /* Post 1 — foto + logo */
+  .ig-post.photo-type {
+    background: var(--carbone);
+  }
+  .ig-post.photo-type img.bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+  }
+  .ig-post.photo-type .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    color: var(--panna);
+  }
+  .ig-post.photo-type .top-mark {
+    width: 36px;
+  }
+  .ig-post.photo-type .top-mark img { width: 100%; height: auto; }
+  .ig-post.photo-type .bottom h3 {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+  }
+  .ig-post.photo-type .bottom h3 em { font-style: italic; color: var(--rosso); }
+  .ig-post.photo-type .bottom .small {
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--oro);
+    margin-top: 4px;
+  }
+
+  /* Post 2 — ilustração original com moldura */
+  .ig-post.illust {
+    background: var(--rosso);
+    padding: 0;
+    overflow: hidden;
+  }
+  .ig-post.illust .frame {
+    position: absolute;
+    inset: 16px;
+    border: 2px solid var(--panna);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .ig-post.illust img.full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ig-post.illust .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px 24px 28px;
+    background: linear-gradient(180deg, transparent 0%, rgba(232, 60, 67, 0.92) 60%);
+    color: var(--panna);
+    text-align: center;
+    z-index: 3;
+  }
+  .ig-post.illust .overlay h3 {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  /* Post 3 — citação com logo */
+  .ig-post.quote {
+    background: var(--panna);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--inchiostro);
+  }
+  .ig-post.quote .top-mark {
+    width: 36px;
+  }
+  .ig-post.quote .top-mark img { width: 100%; height: auto; }
+  .ig-post.quote .mark {
+    font-family: var(--display);
+    font-size: 80px;
+    color: var(--rosso);
+    line-height: 1;
+    margin-bottom: -16px;
+  }
+  .ig-post.quote h3 {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 24px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .ig-post.quote .footer {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rosso);
+    border-top: 1px solid rgba(43, 32, 24, 0.2);
+    padding-top: 12px;
+  }
+
+  /* Post 4 — cardápio do dia (com logo no header) */
+  .ig-post.menu {
+    background: var(--panna-warm);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    color: var(--inchiostro);
+  }
+  .ig-post.menu .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(43, 32, 24, 0.3);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .ig-post.menu .header img.logo { height: 28px; width: auto; }
+  .ig-post.menu .head {
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--rosso);
+  }
+  .ig-post.menu h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .ig-post.menu ul { list-style: none; flex: 1; }
+  .ig-post.menu ul li {
+    font-family: var(--serif);
+    font-size: 13px;
+    padding: 5px 0;
+    border-bottom: 1px dotted rgba(43, 32, 24, 0.3);
+    display: flex;
+    justify-content: space-between;
+  }
+  .ig-post.menu ul li strong { font-weight: 700; }
+  .ig-post.menu .footer-mark {
+    margin-top: 8px;
+    text-align: right;
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--rosso);
+  }
+
+  /* Post 5 — bastidor com logo branco */
+  .ig-post.process {
+    background: var(--legno);
+    padding: 0;
+    overflow: hidden;
+  }
+  .ig-post.process img.bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(1.1);
+  }
+  .ig-post.process .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    color: var(--panna);
+  }
+  .ig-post.process .top-mark { width: 36px; }
+  .ig-post.process .top-mark img { width: 100%; height: auto; }
+  .ig-post.process .top-text {
+    font-family: var(--hand);
+    font-size: 24px;
+    color: var(--oro);
+    margin-top: 8px;
+  }
+  .ig-post.process .bot h3 {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 32px;
+    line-height: 0.95;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  }
+  .ig-post.process .bot h3 em { color: var(--rosso); }
+
+  /* Post 6 — anúncio aniversário (logo + ícone) */
+  .ig-post.special {
+    background: var(--verde);
+    color: var(--panna);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .ig-post.special .top-icon {
+    width: 56px;
+    margin: 0 auto;
+  }
+  .ig-post.special .top-icon img { width: 100%; height: auto; filter: brightness(0) invert(1); }
+  .ig-post.special .label {
+    background: var(--panna);
+    color: var(--verde);
+    position: static;
+    align-self: center;
+    margin: 16px auto 0;
+  }
+  .ig-post.special h3 {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .ig-post.special h3 em { font-style: italic; }
+  .ig-post.special p {
+    font-family: var(--serif);
+    font-size: 14px;
+    opacity: 0.95;
+    margin-bottom: 16px;
+  }
+  .ig-post.special .signature {
+    height: 28px;
+    margin: 0 auto;
+  }
+  .ig-post.special .signature img { height: 100%; width: auto; filter: brightness(0) invert(1); }
+
+  /* Stories */
+  .stories-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .story {
+    aspect-ratio: 9/16;
+    background: var(--panna-warm);
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    overflow: hidden;
+    position: relative;
+  }
+  .story-1 { background: var(--carbone); }
+  .story-1 img.bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+  .story-1 .content {
+    position: absolute;
+    inset: 0;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--panna);
+    z-index: 2;
+  }
+  .story-1 .top-mark { width: 32px; }
+  .story-1 .top-mark img { width: 100%; height: auto; filter: brightness(0) invert(1); }
+  .story-1 h4 {
+    font-family: var(--display);
+    font-size: 36px;
+    font-style: italic;
+    line-height: 0.95;
+  }
+  .story-1 h4 em { color: var(--rosso); font-style: normal; }
+
+  .story-2 {
+    background: var(--rosso);
+    color: var(--panna);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .story-2 .icon { width: 60px; margin: 0 auto 16px; }
+  .story-2 .icon img { width: 100%; height: auto; filter: brightness(0) invert(1); }
+  .story-2 h4 {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 0.95;
+    margin-bottom: 8px;
+  }
+  .story-2 h4 em { font-style: italic; }
+  .story-2 p { font-family: var(--hand); font-size: 22px; color: var(--panna-warm);}
+  .story-2 .signature {
+    height: 32px;
+    margin: 24px auto 0;
+  }
+  .story-2 .signature img { height: 100%; width: auto; filter: brightness(0) invert(1); }
+
+  .story-3 {
+    background: var(--panna);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .story-3 .top-logo {
+    height: 28px;
+  }
+  .story-3 .top-logo img { height: 100%; width: auto; }
+  .story-3 .middle .top {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rosso);
+    margin-bottom: 8px;
+  }
+  .story-3 .middle h4 {
+    font-family: var(--display);
+    font-size: 36px;
+    line-height: 0.95;
+    color: var(--inchiostro);
+  }
+  .story-3 .middle h4 em { font-style: italic; color: var(--rosso); }
+  .story-3 .bot {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--inchiostro);
+    opacity: 0.7;
+  }
+
+  .story-4 {
+    background: var(--carbone);
+    color: var(--panna);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .story-4 img.bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+  }
+  .story-4 .content {
+    position: absolute;
+    inset: 0;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: var(--panna);
+    z-index: 2;
+  }
+  .story-4 .top-icon { width: 44px; }
+  .story-4 .top-icon img { width: 100%; height: auto; filter: brightness(0) invert(1); }
+  .story-4 .middle h4 {
+    font-family: var(--display);
+    font-size: 28px;
+    line-height: 1;
+    color: var(--panna);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  }
+  .story-4 .middle h4 em { font-style: italic; color: var(--rosso); }
+  .story-4 .meta {
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--oro);
+  }
+
+  /* ============================================================
+     09 — APLICAÇÕES FÍSICAS
+     ============================================================ */
+  .applications-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  /* Cardápio */
+  .menu-mockup {
+    aspect-ratio: 3/4;
+    background: var(--panna);
+    padding: 56px 48px 80px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    position: relative;
+    box-shadow: 8px 8px 0 var(--legno);
+  }
+  .menu-mockup .head {
+    text-align: center;
+    border-bottom: 2px solid var(--inchiostro);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+  .menu-mockup .head img.logo {
+    width: 280px;
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 8px;
+  }
+  .menu-mockup .head .sub {
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--verde);
+  }
+  .menu-mockup .menu-list h4 {
+    font-family: var(--display);
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rosso);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rosso);
+  }
+  .menu-mockup .menu-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 8px 0;
+    font-family: var(--serif);
+  }
+  .menu-mockup .menu-item .name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--inchiostro);
+  }
+  .menu-mockup .menu-item .desc {
+    font-style: italic;
+    font-size: 12px;
+    color: var(--inchiostro);
+    opacity: 0.7;
+  }
+  .menu-mockup .menu-item .price {
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--rosso);
+  }
+  .menu-mockup .footer {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--inchiostro);
+    opacity: 0.5;
+  }
+
+  .apps-side {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Cartão */
+  .biz-card {
+    aspect-ratio: 5/3;
+    background: var(--panna);
+    padding: 24px;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 6px 6px 0 var(--rosso);
+    position: relative;
+  }
+  .biz-card .top {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .biz-card .logo-mark {
+    height: 56px;
+  }
+  .biz-card .logo-mark img { height: 100%; width: auto; }
+  .biz-card .info {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--inchiostro);
+    line-height: 1.6;
+  }
+  .biz-card .info strong { color: var(--rosso); }
+
+  /* Caixa de pizza */
+  .box-mockup {
+    aspect-ratio: 1;
+    background: var(--legno);
+    padding: 32px;
+    color: var(--panna-warm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--legno);
+    position: relative;
+    overflow: hidden;
+  }
+  .box-mockup::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.8 0 0 0 0 0.7 0 0 0 0 0.5 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.6;
+  }
+  .box-mockup > * { position: relative; z-index: 2; }
+  .box-mockup .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .box-mockup .top-icon { width: 42px; }
+  .box-mockup .top-icon img { width: 100%; height: auto; }
+  .box-mockup .label-side {
+    font-family: var(--sans);
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--panna);
+    opacity: 0.7;
+  }
+  .box-mockup .center {
+    text-align: center;
+  }
+  .box-mockup .center img.logo {
+    width: 70%;
+    max-width: 240px;
+    height: auto;
+    filter: brightness(0) invert(1) sepia(0.2) saturate(2) hue-rotate(345deg);
+  }
+  .box-mockup .bot {
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--panna);
+    text-align: center;
+  }
+
+  /* Aplicações secundárias */
+  .apps-secondary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .app-mock {
+    aspect-ratio: 4/5;
+    border: 1px solid rgba(43, 32, 24, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Avental */
+  .app-apron {
+    background: var(--panna);
+    align-items: center;
+    padding: 24px;
+  }
+  .app-apron .body {
+    flex: 1;
+    width: 100%;
+    background: var(--panna-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    position: relative;
+    clip-path: polygon(20% 0, 80% 0, 90% 15%, 100% 100%, 0 100%, 10% 15%);
+  }
+  .app-apron .body img { max-width: 60%; height: auto; }
+  .app-apron .label {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--inchiostro);
+    opacity: 0.6;
+    margin-top: 16px;
+    text-transform: uppercase;
+  }
+
+  /* Sacola kraft */
+  .app-bag {
+    background: var(--pergamena);
+    padding: 28px 24px;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--inchiostro);
+    text-align: center;
+  }
+  .app-bag .top-icon { width: 36px; margin-bottom: 12px;}
+  .app-bag .top-icon img { width: 100%; height: auto; }
+  .app-bag img.logo {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+  }
+  .app-bag .stamp {
+    margin-top: 16px;
+    border: 2px solid var(--inchiostro);
+    padding: 8px 12px;
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+  }
+  .app-bag .footer {
+    margin-top: auto;
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--verde);
+  }
+
+  /* Camiseta */
+  .app-shirt {
+    background: var(--carbone);
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    color: var(--panna);
+    text-align: center;
+  }
+  .app-shirt .top-icon { width: 60px; margin-bottom: 16px;}
+  .app-shirt .top-icon img { width: 100%; height: auto; filter: brightness(0) invert(1) sepia(0.3) saturate(3) hue-rotate(345deg);}
+  .app-shirt img.logo {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+  .app-shirt .sub {
+    font-family: var(--hand);
+    font-size: 20px;
+    color: var(--oro);
+  }
+
+  /* ============================================================
+     FECHAMENTO
+     ============================================================ */
+  .closing {
+    background: var(--carbone);
+    color: var(--panna);
+    padding: 160px 0 96px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(233, 75, 75, 0.2) 0%, transparent 60%);
+  }
+  .closing-inner {
+    position: relative;
+    z-index: 2;
+  }
+  .closing .icon {
+    width: 80px;
+    margin: 0 auto 40px;
+  }
+  .closing .icon img { width: 100%; height: auto; }
+  .closing h2 {
+    font-family: var(--display);
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .closing h2 em { font-style: italic; color: var(--rosso); }
+  .closing .sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    opacity: 0.85;
+    max-width: 560px;
+    margin: 0 auto 48px;
+  }
+  .closing .signature {
+    width: 220px;
+    margin: 0 auto 48px;
+  }
+  .closing .signature img { width: 100%; height: auto; }
+  .closing .meta {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    line-height: 2;
+  }
+
+  /* RESPONSIVO */
+  @media (max-width: 960px) {
+    .container { padding: 0 24px; }
+    section { padding: 80px 0; }
+    .toc-grid,
+    .manifesto-grid,
+    .palette-hero,
+    .photo-intro,
+    .voice-rules,
+    .construction,
+    .icon-grid,
+    .illustration-grid,
+    .applications-row { grid-template-columns: 1fr; gap: 32px; }
+    .palette-hero { aspect-ratio: auto; }
+    .palette-secondary { grid-template-columns: repeat(3, 1fr); }
+    .logo-grid,
+    .voice-pillars,
+    .messages-grid,
+    .donts-grid,
+    .photo-mosaic,
+    .social-row,
+    .stories-row,
+    .apps-secondary,
+    .illustration-principles,
+    .illustration-details { grid-template-columns: repeat(2, 1fr); }
+    .icon-variations { grid-template-columns: repeat(2, 1fr); }
+    .photo-rules { grid-template-columns: 1fr; }
+    .typo-grid { grid-template-columns: 1fr; }
+    .scale-row { grid-template-columns: 60px 1fr; }
+    .scale-row .meta { display: none; }
+    .photo-mosaic .ph.tall { grid-row: span 1; aspect-ratio: 1;}
+    .photo-mosaic .ph.wide { grid-column: span 2; aspect-ratio: 2/1;}
+  }
+
+  @media (max-width: 560px) {
+    .palette-secondary,
+    .logo-grid,
+    .voice-pillars,
+    .donts-grid,
+    .messages-grid,
+    .stories-row,
+    .apps-secondary,
+    .illustration-principles { grid-template-columns: 1fr; }
+    .photo-mosaic { grid-template-columns: repeat(2, 1fr); }
+    .photo-mosaic .ph.wide { grid-column: span 2;}
+  }
+
+  @media print {
+    body { background: white; }
+    body::before { display: none; }
+    section { page-break-inside: avoid; padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== CAPA ===================== -->
+<section class="cover">
+  <div class="cover-corner tl">Brandbook · 2026</div>
+  <div class="cover-corner tr">Volume Único</div>
+  <div class="cover-corner bl">Confidencial</div>
+  <div class="cover-corner br">Forno à lenha · 02 fornos</div>
+
+  <div class="cover-icon"><img src="assets/icone.png" alt="Ícone Espósito"></div>
+
+  <div class="cover-inner">
+    <div class="cover-eyebrow">— manuale di marca —</div>
+    <div class="cover-logo"><img src="assets/logo.svg" alt="Espósito Pizzeria"></div>
+    <p class="cover-subtitle">A pizzaria onde toda massa<br>nasce com pequena coroa.</p>
+    <div class="cover-meta">
+      <span>Brandbook</span>
+      <span>Barão Geraldo · Campinas</span>
+      <span>Versão 1.0</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ÍNDICE ===================== -->
+<section class="toc">
+  <div class="container">
+    <div class="toc-grid">
+      <div>
+        <h2>Sommario<br><em>do volume</em></h2>
+        <p style="font-family: var(--serif); font-style: italic; font-size: 17px; margin-top: 24px; opacity: 0.7; line-height: 1.6;">Um guia para todos que cuidam da marca — do garçom ao designer, do social media ao motoboy. Comece pela história. Termine com a coroa.</p>
+      </div>
+      <ol class="toc-list">
+        <li><span class="num">01</span><span style="flex:1; font-style: italic;">A história · manifesto</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 03</span></li>
+        <li><span class="num">02</span><span style="flex:1; font-style: italic;">Logo · ícone · variações</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 04</span></li>
+        <li><span class="num">03</span><span style="flex:1; font-style: italic;">Paleta de cores</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 06</span></li>
+        <li><span class="num">04</span><span style="flex:1; font-style: italic;">Tipografia</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 07</span></li>
+        <li><span class="num">05</span><span style="flex:1; font-style: italic;">Ilustração · è fatta la pizza</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 08</span></li>
+        <li><span class="num">06</span><span style="flex:1; font-style: italic;">Fotografia</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 09</span></li>
+        <li><span class="num">07</span><span style="flex:1; font-style: italic;">Tom de voz · do's & dont's</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 10</span></li>
+        <li><span class="num">08</span><span style="flex:1; font-style: italic;">Aplicações em social</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 11</span></li>
+        <li><span class="num">09</span><span style="flex:1; font-style: italic;">Aplicações físicas</span><span class="dots"></span><span style="font-family: var(--sans); font-size: 12px; opacity: 0.6;">pag. 12</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 01 - MANIFESTO ===================== -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="section-number">01</span><span>Manifesto</span></div>
+    <h2 class="section-title">Uma pizza com<br><em>pequena coroa.</em></h2>
+    <p class="section-intro">Em Barão Geraldo, vizinha de parede com o Empório do Nono, a Espósito não nasceu para ser mais uma pizzaria. Nasceu para ser <em>aquela</em> pizzaria — onde a massa descansa, o forno respira lenha e a casa lembra a cozinha da nonna.</p>
+
+    <div class="manifesto-grid">
+      <div class="manifesto-text">
+        <p>Servimos pizza acima da média porque cuidamos acima da média. Massa de fermentação longa, ingredientes nobres, dois fornos a lenha trabalhando lado a lado. Nada aqui é apressado.</p>
+        <p class="lead">Acreditamos que toda boa noite começa com pão na mesa, vinho na taça e alguém rindo do outro lado.</p>
+        <p>Somos família — e tratamos quem chega como família. O casal que comemora aniversário. A mesa de amigos que se vê uma vez por mês. A criança que pede pizza com queijo. Todo mundo, do seu jeito, é rei e rainha por aqui.</p>
+      </div>
+
+      <div class="manifesto-tirinha">
+        <h4>la leggenda della Margherita</h4>
+        <div class="panel" data-panel="I">A rainha pediu uma pizza tão simples quanto seu reino merecia: tomate, mozzarella, manjericão.</div>
+        <div class="panel" data-panel="II">O pizzaiolo Raffaele Espósito serviu — e o rei provou: "Esta tem a cor da bandeira, o sabor da terra, e a coroa da casa."</div>
+        <div class="panel" data-panel="III">Desde então, toda pizza Espósito sai do forno usando uma pequena coroa. <em>(Olha em cima do logo. Tá lá.)</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 - LOGO ===================== -->
+<section class="cream">
+  <div class="container">
+    <div class="section-label"><span class="section-number">02</span><span>Identidade Visual</span></div>
+    <h2 class="section-title">O logo<br><em>e suas variações.</em></h2>
+    <p class="section-intro">Lettering manual, vermelho coral, traço imperfeito de quem assina à mão. Acima do "ó", a coroa em verde italiano — discreta, mas inegociável. É a assinatura da casa.</p>
+
+    <!-- Logo principal -->
+    <div class="logo-hero">
+      <div class="corners"></div>
+      <img src="assets/logo.svg" alt="Logo Espósito Pizzeria">
+    </div>
+    <div class="logo-hero-meta">Logo principal · vetorial · proporção 100%</div>
+
+    <!-- Variações -->
+    <h3 style="font-family: var(--display); font-size: 32px; margin-bottom: 8px;">Variações sobre fundos</h3>
+    <p style="font-family: var(--serif); font-style: italic; opacity: 0.7; margin-bottom: 32px;">O logo permanece sempre o mesmo. Variam os fundos.</p>
+    <div class="logo-grid">
+      <div class="logo-card bg-cream">
+        <img src="assets/logo.svg" alt="Logo sobre creme">
+        <div class="label">Primário · creme</div>
+      </div>
+      <div class="logo-card bg-warm">
+        <img src="assets/logo.svg" alt="Logo sobre bege">
+        <div class="label">Secundário · bege quente</div>
+      </div>
+      <div class="logo-card bg-perg">
+        <img src="assets/logo.svg" alt="Logo sobre pergamena">
+        <div class="label">Terciário · pergamena</div>
+      </div>
+      <div class="logo-card bg-dark">
+        <img src="assets/logo.svg" alt="Logo sobre carbone">
+        <div class="label">Reverso · carbone</div>
+      </div>
+      <div class="logo-card bg-red">
+        <img src="assets/logo-mono-white.svg" alt="Logo monocromático branco">
+        <div class="label">Monocromático · branco</div>
+      </div>
+      <div class="logo-card bg-wood">
+        <img src="assets/logo-mono-white.svg" alt="Logo branco sobre madeira">
+        <div class="label">Mono branco · madeira</div>
+      </div>
+    </div>
+
+    <!-- Construção -->
+    <div class="construction">
+      <div class="construction-visual">
+        <img src="assets/logo.svg" alt="Construção do logo">
+      </div>
+      <div>
+        <h3>Construção e respiro</h3>
+        <p>O logo precisa de espaço para respirar. Mantenha sempre uma área livre equivalente à altura da letra <em>"o"</em> em todas as direções.</p>
+        <ul>
+          <li><span>Tamanho mínimo (digital)</span> <strong>140 px</strong></li>
+          <li><span>Tamanho mínimo (impresso)</span> <strong>30 mm</strong></li>
+          <li><span>Margem de respiro</span> <strong>1× altura "o"</strong></li>
+          <li><span>Proporção</span> <strong>preservar 100%</strong></li>
+          <li><span>Formato preferido</span> <strong>SVG vetorial</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Ícone — coroa + e -->
+    <div class="icon-section">
+      <div class="icon-grid">
+        <div class="icon-showcase">
+          <img src="assets/icone.png" alt="Ícone Espósito — coroa e e">
+        </div>
+        <div>
+          <h3 style="font-family: var(--display); font-size: 40px; margin-bottom: 16px; line-height: 1;">O ícone<br><em style="font-style: italic; color: var(--rosso);">é a nossa rubrica.</em></h3>
+          <p style="font-family: var(--serif); font-size: 17px; line-height: 1.6; margin-bottom: 24px;">A coroa verde sobre o "e" em espiral vermelho. Quando o logo completo não couber — em selos, etiquetas, avatares, bordados, caixas de pizza, fundo de social — o ícone é o atalho. Sozinho, ele já fala por nós.</p>
+          <div class="icon-variations">
+            <div class="v cream">
+              <img src="assets/icone.png" alt="Ícone sobre creme">
+            </div>
+            <div class="v dark">
+              <img src="assets/icone.png" alt="Ícone sobre carbone">
+            </div>
+            <div class="v red">
+              <img src="assets/icone-branco.png" alt="Ícone branco sobre vermelho">
+            </div>
+            <div class="v green">
+              <img src="assets/icone-branco.png" alt="Ícone branco sobre verde">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Don'ts logo -->
+    <h3 style="font-family: var(--display); font-size: 32px; margin: 16px 0 8px;">O que <em style="color: var(--rosso); font-style: italic;">nunca</em> fazer</h3>
+    <p style="font-family: var(--serif); font-style: italic; opacity: 0.7; margin-bottom: 32px;">A integridade do logo é inegociável. Algumas regras simples, todas elas inquebráveis.</p>
+
+    <div class="donts-grid">
+      <div class="dont">
+        <div class="demo distort"><img src="assets/logo.svg" alt=""></div>
+        <div class="label">Não distorça</div>
+      </div>
+      <div class="dont">
+        <div class="demo rotated"><img src="assets/logo.svg" alt=""></div>
+        <div class="label">Não incline</div>
+      </div>
+      <div class="dont">
+        <div class="demo colored"><img src="assets/logo.svg" alt=""></div>
+        <div class="label">Não troque as cores</div>
+      </div>
+      <div class="dont">
+        <div class="demo stretched"><img src="assets/logo.svg" alt=""></div>
+        <div class="label">Não estique</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 - PALETA ===================== -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="section-number">03</span><span>Paleta de cores</span></div>
+    <h2 class="section-title">Vermelho de tomate.<br><em>Verde de manjericão.</em></h2>
+    <p class="section-intro">A paleta é literalmente a da Margherita — e da bandeira italiana. Cores extraídas direto do logo. Vermelho coral e verde profundo dominam; creme e carbone seguram o resto. Dourado e madeira aparecem só nos detalhes, como o azeite que pinga.</p>
+
+    <div class="palette-hero">
+      <div class="swatch-big rosso">
+        <div>
+          <span style="font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.85; display: block; margin-bottom: 12px;">Cor Primária</span>
+          <h3>Rosso<br><em>Pomodoro</em></h3>
+        </div>
+        <div class="codes">
+          <span>HEX · #E94B4B</span>
+          <span>RGB · 233 · 75 · 75</span>
+          <span>CMYK · 0 · 80 · 70 · 0</span>
+          <span>PANTONE · 178 C</span>
+        </div>
+      </div>
+      <div class="swatch-big verde">
+        <div>
+          <span style="font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.85; display: block; margin-bottom: 12px;">Cor Secundária</span>
+          <h3>Verde<br><em>Basilico</em></h3>
+        </div>
+        <div class="codes">
+          <span>HEX · #008A51</span>
+          <span>RGB · 0 · 138 · 81</span>
+          <span>CMYK · 100 · 0 · 90 · 30</span>
+          <span>PANTONE · 348 C</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family: var(--display); font-size: 28px; margin-bottom: 16px;">Cores de apoio</h3>
+    <div class="palette-secondary">
+      <div class="swatch panna"><div><h4>Panna</h4></div><div class="hex">#F4EBD9</div></div>
+      <div class="swatch warm"><div><h4>Burro</h4></div><div class="hex">#EDE0C5</div></div>
+      <div class="swatch perg"><div><h4>Pergamena</h4></div><div class="hex">#E8DBC0</div></div>
+      <div class="swatch legno"><div><h4>Legno</h4></div><div class="hex">#2A1810</div></div>
+      <div class="swatch carbone"><div><h4>Carbone</h4></div><div class="hex">#1A0F08</div></div>
+      <div class="swatch oro"><div><h4>Olio d'oro</h4></div><div class="hex">#C9A24A</div></div>
+    </div>
+
+    <div class="palette-usage">
+      <h3>Proporção de uso</h3>
+      <div class="ratio">
+        <span class="b1">Panna · 50%</span>
+        <span class="b2">Carbone · 25%</span>
+        <span class="b3">Rosso · 15%</span>
+        <span class="b4">Verde · 7%</span>
+        <span class="b5">Oro · 3%</span>
+      </div>
+      <p>Creme e carbone são a casa, vermelho é o sotaque, verde é o detalhe, dourado é o brilho. Nunca o inverso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 - TIPOGRAFIA ===================== -->
+<section class="cream">
+  <div class="container">
+    <div class="section-label"><span class="section-number">04</span><span>Tipografia</span></div>
+    <h2 class="section-title">Três vozes.<br><em>Uma só fala.</em></h2>
+    <p class="section-intro">Uma serifa elegante para os títulos editoriais. Uma escrita à mão para o calor humano. Uma sans clara para o cardápio e o digital. Importante: <em>o lettering do logo é único e inviolável</em> — as fontes abaixo nunca o substituem.</p>
+
+    <div class="typo-hero">
+      <div class="specimen">A<em>a</em></div>
+      <div class="meta">DM Serif Display · 240px · regular & italic</div>
+    </div>
+
+    <div class="typo-grid">
+      <div class="typo-card">
+        <div class="role">Display · títulos</div>
+        <div class="name serif">Pomodoro</div>
+        <div class="alphabet serif">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 · áàâãéêíóôõú</div>
+        <div class="usage">
+          <strong>DM Serif Display</strong>
+          Use para títulos de seção, manchetes de campanha, capa de cardápio, posts editoriais. Sempre em corpo grande. <em>Itálico</em> para destaques românticos. Nunca substitui o lettering do logo.
+        </div>
+      </div>
+
+      <div class="typo-card">
+        <div class="role">Manuscrita · acentos</div>
+        <div class="name hand">acolhida quente</div>
+        <div class="alphabet hand">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890</div>
+        <div class="usage">
+          <strong>Caveat</strong>
+          A "letra da nonna". Use em pequenas doses: legendas afetivas, recados manuscritos, frases de tirinha, anotações em cardápio. Nunca em parágrafos longos.
+        </div>
+      </div>
+    </div>
+
+    <div class="typo-grid" style="grid-template-columns: 1fr; margin-bottom: 48px;">
+      <div class="typo-card">
+        <div class="role">Sans · corpo, legendas, digital</div>
+        <div class="name sans">Inter</div>
+        <div class="alphabet sans">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890</div>
+        <div class="usage">
+          <strong>Inter</strong>
+          Para tudo o que precisa ser claro: descrição de pizza, preços, endereço, horário, legenda de Instagram, formulário de site. Pesos 300 a 600. Tracking generoso quando em CAIXA ALTA.
+        </div>
+      </div>
+    </div>
+
+    <div class="typo-scale">
+      <h3>Escala tipográfica</h3>
+      <div class="scale-row">
+        <span class="label">Display</span>
+        <span class="sample s1">Margherita.</span>
+        <span class="meta">DM Serif · 64–96 px</span>
+      </div>
+      <div class="scale-row">
+        <span class="label">H1</span>
+        <span class="sample s2">A pizza da nonna</span>
+        <span class="meta">DM Serif · 48 px</span>
+      </div>
+      <div class="scale-row">
+        <span class="label">H2</span>
+        <span class="sample s3">il manifesto</span>
+        <span class="meta">DM Serif italic · 32 px</span>
+      </div>
+      <div class="scale-row">
+        <span class="label">Lead</span>
+        <span class="sample s4">Massa de fermentação longa, ingredientes nobres.</span>
+        <span class="meta">Playfair italic · 22 px</span>
+      </div>
+      <div class="scale-row">
+        <span class="label">Corpo</span>
+        <span class="sample s5">Servimos pizza acima da média porque cuidamos acima da média.</span>
+        <span class="meta">Inter regular · 16 px</span>
+      </div>
+      <div class="scale-row">
+        <span class="label">Eyebrow</span>
+        <span class="sample s6">Brandbook · 2026</span>
+        <span class="meta">Inter medium · 11 px / 0.3em</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 - ILUSTRAÇÃO ===================== -->
+<section class="dark">
+  <div class="container">
+    <div class="section-label"><span class="section-number">05</span><span>Ilustração</span></div>
+    <h2 class="section-title">È fatta<br><em>la pizza.</em></h2>
+    <p class="section-intro">A ilustração principal da Espósito retrata o momento histórico: 1889, Nápoles. O pizzaiolo Raffaele Espósito apresenta a Margherita ao Rei Umberto I e à Rainha Margherita de Saboia. É daí que vem o nome da nossa casa — e da nossa pizza.</p>
+
+    <!-- Ilustração principal em destaque -->
+    <div class="illustration-hero">
+      <div class="illustration-grid">
+        <div class="illustration-text">
+          <div class="historical">— Nápoles, 11 de junho de 1889 —</div>
+          <h3>O dia em que<br><em>nasceu a Margherita.</em></h3>
+          <p>Raffaele Espósito, pizzaiolo da <em>Pizzeria Brandi</em>, criou três pizzas para os reis em visita a Nápoles. A favorita da Rainha levou tomate, mozzarella e manjericão — vermelho, branco e verde, as cores da bandeira da Itália recém-unificada.</p>
+          <p>Em sua homenagem, a pizza ganhou o nome de <em>Margherita</em>. E o sobrenome do pizzaiolo virou nome da nossa casa.</p>
+          <div class="quote">"...è fatta la pizza!"</div>
+        </div>
+        <div class="illustration-visual">
+          <img src="assets/ilustracao.jpeg" alt="Ilustração: Raffaele Espósito apresenta a Margherita ao Rei Umberto I e à Rainha Margherita">
+        </div>
+      </div>
+    </div>
+
+    <!-- Princípios da ilustração -->
+    <h3 style="font-family: var(--display); font-size: 32px; margin-bottom: 8px;">Como usar a ilustração</h3>
+    <p style="font-family: var(--serif); font-style: italic; opacity: 0.75; margin-bottom: 32px;">A ilustração é um patrimônio. Tratamos como obra, não como adesivo.</p>
+
+    <div class="illustration-principles">
+      <div class="ill-principle">
+        <div class="num">01</div>
+        <h4>Use inteira sempre que possível</h4>
+        <p>A composição completa conta a história. Use em capa de cardápio, parede da pizzaria, site, cartão de boas-vindas, primeiro post.</p>
+      </div>
+      <div class="ill-principle">
+        <div class="num">02</div>
+        <h4>Recortes para contextos pequenos</h4>
+        <p>Para Stories, ícones ou peças menores, recorte em personagens individuais (a rainha, o rei, o pizzaiolo, o anjo). Mantenha o estilo gravura.</p>
+      </div>
+      <div class="ill-principle">
+        <div class="num">03</div>
+        <h4>Não modifique cores nem proporções</h4>
+        <p>Não aplique filtros, não inverta, não recolore, não esfumace. A paleta âmbar/sépia faz parte da identidade.</p>
+      </div>
+    </div>
+
+    <!-- Recortes da ilustração -->
+    <h3 style="font-family: var(--display); font-size: 28px; margin-bottom: 8px;">Recortes para uso</h3>
+    <p style="font-family: var(--serif); font-style: italic; opacity: 0.75; margin-bottom: 32px;">Quatro personagens, quatro contextos.</p>
+
+    <div class="illustration-details">
+      <div class="ill-detail d1">
+        <img src="assets/ilustracao.jpeg" alt="A rainha Margherita">
+        <span class="tag">la regina</span>
+      </div>
+      <div class="ill-detail d2">
+        <img src="assets/ilustracao.jpeg" alt="O rei Umberto">
+        <span class="tag">il re</span>
+      </div>
+      <div class="ill-detail d3">
+        <img src="assets/ilustracao.jpeg" alt="O pizzaiolo Raffaele Espósito">
+        <span class="tag">il pizzaiolo</span>
+      </div>
+      <div class="ill-detail d4">
+        <img src="assets/ilustracao.jpeg" alt="O anjo cozinheiro">
+        <span class="tag">l'angelo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 - FOTOGRAFIA ===================== -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="section-number">06</span><span>Fotografia</span></div>
+    <h2 class="section-title">Comida que <em>parece</em><br>comida.</h2>
+
+    <div class="photo-intro">
+      <p class="section-intro" style="margin-bottom: 0;">A fotografia da Espósito é íntima, com luz quente, próxima de quem come. Como em uma trattoria à noite — não como em uma agência. Mãos aparecem. Vinho aparece. Forno aparece.</p>
+      <ol class="photo-principles">
+        <li>Luz quente, lateral, baixa. Como vela acesa, não como fluorescente.</li>
+        <li>Pizza no centro do quadro — sempre inteira, antes da primeira fatia.</li>
+        <li>Madeira, metal, papel kraft. A textura conta junto.</li>
+        <li>Mãos do pizzaiolo, taça de vinho, garfo. A vida na mesa.</li>
+        <li>Cores reais. Sem filtro Instagram saturado. Sem HDR.</li>
+      </ol>
+    </div>
+
+    <div class="photo-mosaic">
+      <div class="ph wide"><img src="assets/pizza-01.png" alt="Pizza"><span class="tag">Hero · cardápio</span></div>
+      <div class="ph"><img src="assets/ambiente-01.png" alt="Pizza Margherita"><span class="tag">Detalhe</span></div>
+      <div class="ph"><img src="assets/ambiente-04.png" alt="Forno"><span class="tag">Atmosfera</span></div>
+
+      <div class="ph"><img src="assets/pizza-02.png" alt="Pizza com prosciutto"><span class="tag">Mãos</span></div>
+      <div class="ph"><img src="assets/pizza-03.png" alt="Pizza"><span class="tag">Top down</span></div>
+      <div class="ph"><img src="assets/ambiente-02.png" alt="Mesa servida"><span class="tag">Mesa</span></div>
+      <div class="ph"><img src="assets/ambiente-05.png" alt="Pizza fatia"><span class="tag">Fatia</span></div>
+
+      <div class="ph"><img src="assets/pizza-04.png" alt="Pizza"><span class="tag">Editorial</span></div>
+      <div class="ph"><img src="assets/pizza-05.png" alt="Petisco"><span class="tag">Petiscos</span></div>
+      <div class="ph"><img src="assets/ambiente-03.png" alt="Pizza com vinho"><span class="tag">Vinho</span></div>
+      <div class="ph"><img src="assets/ambiente-06.png" alt="Salame"><span class="tag">Ingredientes</span></div>
+    </div>
+
+    <div class="photo-rules">
+      <div class="photo-rule">
+        <h4>Faça assim</h4>
+        <ul>
+          <li>Fotografe em luz natural ou luz quente baixa (3000K)</li>
+          <li>Mostre a borda queimadinha, a fumaça, a textura da massa</li>
+          <li>Incluir contexto: madeira, papel, mãos, taça</li>
+          <li>Pizza em prato preto, prata escovada ou direto na pedra</li>
+          <li>Edição leve: corrigir balanço de branco, manter sombras</li>
+          <li>Detalhe (close em fatia, queijo escorrendo) é sempre bem-vindo</li>
+        </ul>
+      </div>
+      <div class="photo-rule dont">
+        <h4>Nunca faça</h4>
+        <ul>
+          <li>Flash direto, luz fluorescente, fundo branco "estúdio"</li>
+          <li>Saturação artificial, presets coloridos, HDR</li>
+          <li>Pizza em pratos coloridos ou descartáveis</li>
+          <li>Composição plana sem profundidade</li>
+          <li>Imagens de banco com modelo "sorrindo para a pizza"</li>
+          <li>Filtros vintage falsos — cor desbotada, vinheta forte</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 07 - TOM DE VOZ ===================== -->
+<section class="cream">
+  <div class="container">
+    <div class="section-label"><span class="section-number">07</span><span>Tom de voz</span></div>
+    <h2 class="section-title">Como a gente <em>fala.</em></h2>
+
+    <div class="voice-hero">
+      <p class="big-quote">"A gente <em>não</em> grita ofertas. A gente <em>convida</em> para jantar."</p>
+      <div class="attribution">— a regra de ouro da casa</div>
+    </div>
+
+    <p class="section-intro" style="margin: -32px 0 48px;">Nossa voz é a de uma família italiana que recebe em casa: hospitaleira, com humor leve, sem floreio. A gente conta histórias, dá dicas, comenta o tempo. Não vende — convida.</p>
+
+    <div class="voice-pillars">
+      <div class="pillar">
+        <div class="icon-box"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 4 L20 14 L30 14 L22 20 L25 28 L16 23 L7 28 L10 20 L2 14 L12 14 Z"/></svg></div>
+        <h4>Cordial</h4>
+        <p>Trata todo cliente como se voltasse semana que vem — porque queremos que volte.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon-box"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 16 Q6 8 16 8 Q26 8 26 16 Q26 24 16 26 L12 30 L13 24 Q6 22 6 16 Z"/></svg></div>
+        <h4>Conversado</h4>
+        <p>Frases curtas, claras, jeito de fala. Nada de jargão de marketing.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon-box"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 12 L24 12 M8 18 L24 18 M8 24 L18 24"/><path d="M22 4 L26 8 L14 20 L10 20 L10 16 Z"/></svg></div>
+        <h4>Caprichado</h4>
+        <p>O texto reflete o produto: detalhe, atenção, gosto. Sem erros, sem pressa.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon-box"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="16" cy="16" r="11"/><path d="M11 14 Q11 13 12 13 M21 14 Q21 13 20 13"/><path d="M10 20 Q16 24 22 20"/></svg></div>
+        <h4>Bem-humorado</h4>
+        <p>Piscadela italiana — usar uma expressão na lingua de vez em quando, brincar com o rei e a rainha.</p>
+      </div>
+    </div>
+
+    <div class="voice-rules">
+      <div class="voice-rule do">
+        <div class="header">
+          <div class="badge">✓</div>
+          <h4>A gente diz</h4>
+        </div>
+        <ul>
+          <li>"Hoje a Margherita tá impecável. Vem ver."<em>Convite, não venda.</em></li>
+          <li>"Reservar mesa no fim de semana é boa ideia." <em>Aviso prático, com cuidado.</em></li>
+          <li>"Massa em fermentação natural, 36h de espera." <em>Mostrar processo, não ostentar.</em></li>
+          <li>"Da nossa cozinha pra sua mesa — buon appetito." <em>Um italiano por mensagem, no máximo.</em></li>
+          <li>"Forno ligado, lenha estalando. Tá quase." <em>Sensorial, presente.</em></li>
+        </ul>
+      </div>
+
+      <div class="voice-rule dont">
+        <div class="header">
+          <div class="badge">✕</div>
+          <h4>A gente NÃO diz</h4>
+        </div>
+        <ul>
+          <li>"PROMOÇÃO IMPERDÍVEL!! 🔥🔥🔥" <em>Caixa alta, emojis em rajada, urgência fake.</em></li>
+          <li>"A melhor pizza de Campinas." <em>Nunca se autodeclarar a melhor. Que digam por nós.</em></li>
+          <li>"Mamma mia! Bellissimo! Andiamo! Ciao bella!" <em>Italianidade caricata, fantasiada.</em></li>
+          <li>"Experimente nosso novo combo família!" <em>Linguagem de fast-food.</em></li>
+          <li>"Aproveite, é só hoje, corre!" <em>Pressão. Não é o nosso ritmo.</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-family: var(--display); font-size: 32px; margin: 16px 0 8px;">Mensagens-modelo</h3>
+    <p style="font-family: var(--serif); font-style: italic; opacity: 0.75; margin-bottom: 32px;">Frases que viram legendas de Instagram, respostas de WhatsApp, cabeçalho de cardápio do dia.</p>
+
+    <div class="messages-grid">
+      <div class="msg-card"><div class="ctx">Para abertura · janta</div><div class="text">A casa abriu, o forno tá no ponto e tem mesa lá no canto te esperando.</div></div>
+      <div class="msg-card"><div class="ctx">Pizza nova no cardápio</div><div class="text">A casa tem uma novidade — mas a gente prefere que você descubra na hora. Pede a do dia.</div></div>
+      <div class="msg-card"><div class="ctx">Reserva</div><div class="text">Sexta lota cedo. Manda mensagem que a gente segura sua mesa — e já abre o vinho.</div></div>
+      <div class="msg-card"><div class="ctx">Dia chuvoso</div><div class="text">Choveu? Melhor ainda. Pizza no forno e vinho na mesa combinam com chuva no telhado.</div></div>
+      <div class="msg-card"><div class="ctx">Aniversário do cliente</div><div class="text">Aniversariante na casa? Avisa a gente. A coroa do dia vai pra você.</div></div>
+      <div class="msg-card"><div class="ctx">Ingrediente especial</div><div class="text">Chegou prosciutto novo do produtor. Vai durar pouco. Quem sabe, sabe.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 08 - APLICAÇÕES SOCIAL ===================== -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="section-number">08</span><span>Aplicações em social</span></div>
+    <h2 class="section-title">Instagram<br><em>como vitrine.</em></h2>
+    <p class="section-intro">A grade da Espósito alterna três tipos: foto editorial (textura, fome), ilustração (a leggenda) e citação tipográfica (frase ou cardápio). Sempre na proporção: <strong>4 fotos · 2 ilustrações/citações · 1 anúncio</strong>. O logo ou o ícone aparece em <em>todos</em> os posts — discreto, mas presente.</p>
+
+    <h3 style="font-family: var(--display); font-size: 28px; margin-bottom: 24px;">Posts (1:1)</h3>
+
+    <div class="social-row">
+      <div class="ig-post photo-type">
+        <span class="label">Foto editorial</span>
+        <img class="bg" src="assets/ambiente-05.png" alt="Pizza">
+        <div class="overlay">
+          <div class="top-mark"><img src="assets/icone-branco.png" alt=""></div>
+          <div class="bottom">
+            <h3>Margherita,<br><em>como sempre.</em></h3>
+            <div class="small">a clássica · feita com calma</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ig-post illust">
+        <span class="label">Ilustração</span>
+        <img class="full" src="assets/ilustracao.jpeg" alt="È fatta la pizza">
+        <div class="frame"></div>
+        <div class="overlay">
+          <h3>"...è fatta la pizza!"</h3>
+        </div>
+      </div>
+
+      <div class="ig-post quote">
+        <span class="label">Citação</span>
+        <div class="top-mark"><img src="assets/icone.png" alt=""></div>
+        <div>
+          <div class="mark">"</div>
+          <h3>Sofisticação aqui<br>é diferente de seriedade.</h3>
+        </div>
+        <div class="footer">— do nosso manifesto</div>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <div class="ig-post menu">
+        <span class="label">Do dia</span>
+        <div class="header">
+          <img class="logo" src="assets/logo.svg" alt="Espósito">
+          <div class="head">la lavagna</div>
+        </div>
+        <h3>cardápio<br>desta sexta</h3>
+        <ul>
+          <li><span>Margherita di nonna</span><strong>R$ 79</strong></li>
+          <li><span>Diavola Espósito</span><strong>R$ 92</strong></li>
+          <li><span>Quattro formaggi</span><strong>R$ 98</strong></li>
+          <li><span>Prosciutto e rúcula</span><strong>R$ 115</strong></li>
+          <li><span>Funghi al tartufo</span><strong>R$ 124</strong></li>
+        </ul>
+        <div class="footer-mark">@espositopizzeria</div>
+      </div>
+
+      <div class="ig-post process">
+        <span class="label">Bastidor</span>
+        <img class="bg" src="assets/ambiente-04.png" alt="Forno">
+        <div class="overlay">
+          <div>
+            <div class="top-mark"><img src="assets/icone-branco.png" alt=""></div>
+            <div class="top-text">450°C, lenha de café.</div>
+          </div>
+          <div class="bot"><h3>O forno<br><em>nunca apaga.</em></h3></div>
+        </div>
+      </div>
+
+      <div class="ig-post special">
+        <span class="label">Aniversário</span>
+        <div>
+          <div class="top-icon"><img src="assets/icone-branco.png" alt=""></div>
+          <span class="label" style="position:static; align-self:center; display: inline-block; margin-top: 12px;">Aniversário</span>
+        </div>
+        <div>
+          <h3>Aniversário?<br>A <em>coroa</em> é sua.</h3>
+          <p>Avisa o garçom. A casa cuida do resto.</p>
+        </div>
+        <div class="signature"><img src="assets/logo-mono-white.svg" alt="Espósito"></div>
+      </div>
+    </div>
+
+    <h3 style="font-family: var(--display); font-size: 28px; margin: 64px 0 24px;">Stories (9:16)</h3>
+
+    <div class="stories-row">
+      <div class="story story-1">
+        <img class="bg" src="assets/ambiente-02.png" alt="Pizza prosciutto">
+        <div class="content">
+          <div class="top-mark"><img src="assets/icone.png" alt=""></div>
+          <h4>Hoje<br>tem <em>nova</em></h4>
+        </div>
+      </div>
+
+      <div class="story story-2">
+        <div class="icon"><img src="assets/icone.png" alt="Coroa Espósito"></div>
+        <h4>Reserva<br><em>sua mesa</em></h4>
+        <p>swipe up, prego.</p>
+        <div class="signature"><img src="assets/logo-mono-white.svg" alt="Espósito"></div>
+      </div>
+
+      <div class="story story-3">
+        <div class="top-logo"><img src="assets/logo.svg" alt="Espósito"></div>
+        <div class="middle">
+          <div class="top">expediente · sexta</div>
+          <h4>Forno<br>aceso<br><em>até 23h</em></h4>
+        </div>
+        <div class="bot">Barão Geraldo<br>Campinas · SP</div>
+      </div>
+
+      <div class="story story-4">
+        <img class="bg" src="assets/ambiente-04.png" alt="Forno">
+        <div class="content">
+          <div class="top-icon"><img src="assets/icone.png" alt=""></div>
+          <div class="middle">
+            <h4>Boa noite,<br><em>maestà.</em></h4>
+          </div>
+          <div class="meta">— a casa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 09 - APLICAÇÕES FÍSICAS ===================== -->
+<section class="cream">
+  <div class="container">
+    <div class="section-label"><span class="section-number">09</span><span>Aplicações físicas</span></div>
+    <h2 class="section-title">Da mesa<br><em>à entrega.</em></h2>
+    <p class="section-intro">A marca acontece no papel kraft do delivery, no avental do garçom, na caixa de pizza, no cartão entregue ao cliente. O logo aparece sempre — vetorial, na cor original ou em branco. Nunca substituído por texto.</p>
+
+    <div class="applications-row">
+      <div class="menu-mockup">
+        <div class="head">
+          <img class="logo" src="assets/logo.svg" alt="Espósito">
+          <div class="sub">— il menu della casa —</div>
+        </div>
+        <div class="menu-list">
+          <h4>Pizze classiche</h4>
+          <div class="menu-item">
+            <div>
+              <div class="name">Margherita di nonna</div>
+              <div class="desc">San Marzano, fior di latte, manjericão, azeite EV</div>
+            </div>
+            <div class="price">79</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="name">Marinara</div>
+              <div class="desc">Tomate, alho, orégano, azeite EV</div>
+            </div>
+            <div class="price">72</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="name">Diavola Espósito</div>
+              <div class="desc">Calabresa artesanal, mel picante, cebola caramelizada</div>
+            </div>
+            <div class="price">92</div>
+          </div>
+
+          <h4 style="margin-top: 24px;">Pizze speciali</h4>
+          <div class="menu-item">
+            <div>
+              <div class="name">Quattro formaggi</div>
+              <div class="desc">Mozzarella, gorgonzola, provolone, parmigiano</div>
+            </div>
+            <div class="price">98</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="name">Prosciutto e rúcula</div>
+              <div class="desc">Prosciutto crudo San Daniele, rúcula, parmigiano</div>
+            </div>
+            <div class="price">115</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="name">Funghi al tartufo</div>
+              <div class="desc">Funghi mistos, óleo trufado, mozzarella, tomilho</div>
+            </div>
+            <div class="price">124</div>
+          </div>
+        </div>
+        <div class="footer">Barão Geraldo · Campinas · SP</div>
+      </div>
+
+      <div class="apps-side">
+        <div class="biz-card">
+          <div class="top">
+            <div class="logo-mark"><img src="assets/logo.svg" alt="Espósito"></div>
+          </div>
+          <div class="info">
+            <strong>Pizzeria · forno a lenha</strong><br>
+            R. da Pizza, 123 · Barão Geraldo<br>
+            Campinas · SP · 13083-000<br>
+            (19) 99999-9999<br>
+            @espositopizzeria
+          </div>
+        </div>
+
+        <div class="box-mockup">
+          <div class="top">
+            <div class="top-icon"><img src="assets/icone.png" alt=""></div>
+            <div class="label-side">N° 30 cm</div>
+          </div>
+          <div class="center">
+            <img class="logo" src="assets/logo-mono-white.svg" alt="Espósito" style="filter: none;">
+          </div>
+          <div class="bot">– da nossa casa, com calma.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="apps-secondary">
+      <div class="app-mock app-apron">
+        <div class="body">
+          <img src="assets/icone.png" alt="Ícone Espósito">
+        </div>
+        <div class="label">Avental · Equipe</div>
+      </div>
+
+      <div class="app-mock app-bag">
+        <div class="top-icon"><img src="assets/icone.png" alt=""></div>
+        <img class="logo" src="assets/logo.svg" alt="Espósito">
+        <div class="stamp">Per asporto</div>
+        <div class="footer">obrigado, volte sempre.</div>
+      </div>
+
+      <div class="app-mock app-shirt">
+        <div class="top-icon"><img src="assets/icone-branco.png" alt=""></div>
+        <img class="logo" src="assets/logo-mono-white.svg" alt="Espósito">
+        <div class="sub">la corte napoletana · 2018</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FECHAMENTO ===================== -->
+<section class="closing">
+  <div class="container closing-inner">
+    <div class="icon"><img src="assets/icone-branco.png" alt="Coroa Espósito"></div>
+    <h2>Buon<br><em>appetito.</em></h2>
+    <p class="sub">Que toda pizza saia coroada.<br>Que todo cliente vire convidado.<br>Que toda mesa vire memória.</p>
+    <div class="signature"><img src="assets/logo-mono-white.svg" alt="Espósito Pizzeria"></div>
+    <div class="meta">
+      Espósito Pizzeria · Brandbook v1.0<br>
+      Barão Geraldo · Campinas · SP<br>
+      © 2026
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
